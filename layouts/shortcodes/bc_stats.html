@@ -1,0 +1,9 @@
+<div class="bcstats">
+	<p>Block height: <b>{{ .Get "height" }}</b></p>
+	<p>Hash rate: <b>{{ .Get "hashrate" }}</b></p>
+	<p>Average txs. per block: <b>{{ .Get "txs_per_block" }}</b></p>
+	<p>Weekly Moving Average txs. per day: <b>{{ .Get "avg_txs_per_day" }}</b></p>
+	<p>Block reward: <b>{{ .Get "block_reward" }} XMR</b></p>
+</div>
+
+<p class="note">Data taken on {{ .Get "date" }}.</p>

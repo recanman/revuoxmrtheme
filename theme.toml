@@ -1,0 +1,14 @@
+name = 'revuo-xmr'
+license = 'AGPLv3'
+description = 'Theme for Revuo Monero newsletter'
+
+[author]
+  name = 'recanman'
+  homepage = 'https://github.com/recanman'
+
+# Originally released under the MIT license.
+# Copyright (c) 2015 Jacopo Rabolini
+[original]
+  author = 'KingFelix'
+  homepage = 'https://www.jacoporabolini.com/emerald/'
+  repo = 'https://github.com/KingFelix/emerald/'

@@ -1,0 +1,7 @@
+{{ with .Site.Params.bottom_nav_icons }}
+	{{ range . }}
+		<a class="icon" href="{{ .link }}"  target="_blank">
+			<img src="/img/{{ .icon }}" alt="{{ .icon_alt }}" title="{{ .title }}" />
+		</a>
+	{{ end }}
+{{ end }}

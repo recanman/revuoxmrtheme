@@ -1,0 +1,58 @@
+<footer class="footer">
+	<style>
+		a.color-grey,
+		.footer-links {
+			color: var(--license-color);
+		}
+		.footer-links-section {
+			margin-bottom: 0;
+		}
+		.footer-icons {
+			display: inline;
+			height: 1rem;
+			vertical-align: middle;
+			margin-bottom: 0;
+			border-radius: 0;
+		}
+		.footer-sponsor,
+		.footer-sponsor:hover,
+		.footer-sponsor:focus {
+			border-bottom: none;
+			text-decoration: none;
+		}
+		.footer-sponsor img {
+			display: inline;
+			height: 1.3rem;
+			vertical-align: middle;
+			margin-bottom: 0;
+			border-radius: 0;
+		}
+	</style>
+	<span
+		>&copy; {{ .Date.Format "2006" }} - {{ .Site.Title }}<br />
+		<a class="color-grey" href="/source/" target="_blank"
+			>Source Code & Licenses</a
+		></span
+	>
+	<p class="footer-links-section" style="align-items: center">
+		<a class="footer-links" href="{{ .Site.BaseURL }}">Clearnet</a>
+		|
+		{{ with .Site.Params.mirrors }}
+			{{ range $index, $element := . }}
+				<img class="footer-icons" src="/img/{{ .icon }}" alt="{{ .icon_alt }}" />
+				<a class="footer-links" href="{{ .link }}">{{ .title }}</a>
+
+				{{ if ne (add $index 1) (len $.Site.Params.mirrors) }}
+					|
+				{{ end }}
+			{{ end }}
+		{{ end }}
+	</p>
+
+	{{ with .Site.Params.sponsor }}
+		{{ .introduction }}
+		<a class="footer-sponsor" href="{{ .link }}" target="_blank">
+			<img src="/img/{{ .icon }}" alt="{{ .icon_alt }}" />
+		</a>
+	{{ end }}
+</footer>

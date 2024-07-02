@@ -1,0 +1,13 @@
+<div class="proposal">
+	<p>
+		<a href='https://ccs.getmonero.org/proposals/{{ .Get "link" }}.html' target="_blank">
+			{{ trim .Inner "<p></p>\n\r" }}
+		</a><span>by {{ .Get "author" }}.</span>
+	</p>
+
+	{{ $goal := .Get "goal" }}
+	{{ $raised := .Get "raised" }}
+	{{ with .Get "raised" }}
+<p>Raised <b>{{ $raised }}</b> of <b>{{ $goal }}</b> XMR ({{ div (.) ($goal) | mul 100 | int }}%)</p>
+	{{ end }}
+</div>

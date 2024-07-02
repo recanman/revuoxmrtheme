@@ -1,0 +1,8 @@
+{{ define "main" }}
+<article id="post-page">
+<h2>{{ .Title }}</h2>
+<time class="by-line">{{ .Date.Format .Site.Params.dateFormat }}</time>
+
+{{ .Content }}
+</article><div style="margin-bottom: 45px"></div>
+{{ end }}

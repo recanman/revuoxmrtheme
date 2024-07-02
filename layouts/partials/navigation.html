@@ -1,0 +1,25 @@
+<input class="nojs-toggle" id="menu-toggle" type="checkbox" name="menu-toggle">
+<label id="nav-menu" for="menu-toggle" class="menu-toggle">
+    <div id="menu"></div>
+</label>
+
+<nav id="nav">
+	<div id="nav-list">
+		<div class="nav-actions">
+			<div id="nav-actions-flex-container" class="nav-actions-flex">
+				{{ partial "right_icons.html" . }}
+			</div>
+			<div id="nav-actions-static-container" class="nav-actions-static">
+				{{ partial "bottom_nav_icons.html" . }}
+			</div>
+		</div>
+
+	
+		{{ partial "nav_links.html" . }}
+	</div>
+
+	<!-- Nav footer -->
+	{{ with .Site.Params.nav_footer }}
+		<a href="{{ .link }}" title="{{ .title }}" target="_blank" hreflang="en">{{ .title }}</a>
+	{{ end }}
+</nav>

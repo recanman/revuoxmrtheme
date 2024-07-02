@@ -1,0 +1,23 @@
+{{ define "main" }}
+<ul id="posts">
+	{{ $paginator := .Paginate (where site.Pages "Type" "weekly") 6 }}
+	{{ range $paginator.Pages }}
+		{{ if not .Params.issuenumber }}
+			{{ continue }}
+		{{ end }}
+
+		<li class="post">
+			<h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+			<time class="by-line">{{ .Date.Format .Site.Params.dateFormat }}</time>
+			<a href="{{ .RelPermalink }}">
+				<img class="img-lead" src="{{ .RelPermalink }}cover.png" alt="Revuo Monero Weekly #{{ .Params.issuenumber }} cover">
+			</a>
+
+			{{ $sTitle := split .Params.title ":" }}
+			<p>{{ site.Title }} Weekly: {{ index $sTitle 1 }}</p>
+		</li>
+	{{ end }}
+</ul>
+
+{{ partial "pagination.html" . }}
+{{ end }}
