@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html
+	lang="{{ or site.Language.LanguageCode }}"
+	dir="{{ or site.Language.LanguageDirection `ltr` }}"
+>
+	<head>
+		{{ partial "head.html" . }}
+	</head>
+	<body>
+		{{ partial "theme-switcher.html" . }}
+
+		<div id="wrap">
+			<div>
+				{{ partial "navigation.html" . }}
+				{{ partial "header.html" . }}
+				<div id="container">
+					<div class="content">
+						{{ block "main" . }}{{ end }}
+					</div>
+				</div>
+				
+				{{ partial "footer.html" . }}
+			</div>
+		</div>
+	</body>
+</html>

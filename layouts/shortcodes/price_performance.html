@@ -1,0 +1,79 @@
+<p>XMR Market Cap: <b>${{ .Get "market_cap" }}</b>.</p>
+<p>Street Price: <b>${{ .Get "street_price" }}</b>.</p>
+
+{{ $times := slice "Week" "Month" "Year" }}
+
+<p class="table-title">Monero (XMR) Price</p>
+<table class="price-table">
+	{{ $td := .Get "table_date" }}
+	<tbody><tr class="row1">
+	  <th></th>
+	  <th>{{ $td }}</th>
+	  <th>Week</th>
+	  <th>Month</th>
+	  <th>Year</th>
+	</tr>
+	<tr>
+	  {{ $price := split (.Get "price_usd") "," }}
+	  <td data-th="XMR to">USD</td>
+	  <td data-th='{{ $td := .Get "table_date" }}'>${{ index $price 0 }}</td>
+
+	  {{ $week := index $price 1 }}
+	  {{ $month := index $price 2 }}
+	  {{ $year := index $price 3 }}
+
+	  {{ $price = slice $week $month $year }}
+
+	  {{ range $i, $v := $price }}
+			{{ $color := "green" }}
+			{{ if eq (substr $v 0 1) "-" }}
+				{{ $color = "red" }}
+			{{ end }}
+
+	  		<td data-th="{{ index $times $i }}" class="{{ $color }}">{{ $v }}%</td>
+	  {{ end }}
+	</tr>
+	<tr class="row3">
+	  {{ $price := split (.Get "price_eur") "," }}
+	  <td data-th="XMR to">EUR</td>
+	  <td data-th='{{ $td := .Get "table_date" }}'>€{{ index $price 0 }}</td>
+	  
+	  {{ $week := index $price 1 }}
+	  {{ $month := index $price 2 }}
+	  {{ $year := index $price 3 }}
+
+	  {{ $price = slice $week $month $year }}
+
+	  {{ range $i, $v := $price }}
+			{{ $color := "green" }}
+			{{ if eq (substr $v 0 1) "-" }}
+				{{ $color = "red" }}
+			{{ end }}
+
+	  		<td data-th="{{ index $times $i }}" class="{{ $color }}">{{ $v }}%</td>
+	  {{ end }}
+	</tr>
+	<tr>
+	  {{ $price := split (.Get "price_btc") "," }}
+	  <td data-th="XMR to">BTC</td>
+	  <td data-th='{{ $td := .Get "table_date" }}'>₿{{ index $price 0 }}</td>
+
+	  {{ $week := index $price 1 }}
+	  {{ $month := index $price 2 }}
+	  {{ $year := index $price 3 }}
+
+	  {{ $price = slice $week $month $year }}
+
+	  {{ range $i, $v := $price }}
+			{{ $color := "green" }}
+			{{ if eq (substr $v 0 1) "-" }}
+				{{ $color = "red" }}
+			{{ end }}
+
+	  		<td data-th="{{ index $times $i }}" class="{{ $color }}">{{ $v }}%</td>
+	  {{ end }}
+	</tr>
+  </tbody>
+</table>
+
+<p class="note">Data taken on {{ .Get "date" }}.</p>

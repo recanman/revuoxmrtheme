@@ -1,0 +1,28 @@
+<header id="header">
+	<div>
+		<a href="/">
+			{{ with .Site.Params.logo }}
+				<img src="/img/{{ .icon }}" alt="{{ .icon_alt }}" />
+			{{ end }}
+		</a>
+	</div>
+
+	<div class="action-container action-container--right">
+		{{ partial "right_icons.html" . }}
+	</div>
+
+	<div class="revuo-classes">
+		{{ $path := .Page.RelPermalink }}
+		{{ $wk := "" }}
+		{{ $pd := "" }}
+
+		{{ if eq $path "/periodicals/" }}
+			{{ $pd = "nav-active" }}
+		{{ else }}
+			{{ $wk = "nav-active" }}
+		{{ end }}
+
+		<a href="/" class="{{ $wk }}">Weekly</a>
+		<a href="/periodicals/" class="{{ $pd }}">Periodical</a>
+	</div>
+</header>

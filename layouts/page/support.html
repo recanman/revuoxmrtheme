@@ -1,0 +1,12 @@
+{{ define "main" }}
+<div class="content">
+	<h3 id="support">Support {{ .Params.name }}</h3>
+	<p markdown="1">{{ .Content }}</p>
+
+	<p markdown="1">
+		If you get value out of {{ .Params.name }} and wish to see it continue,
+		you can send some XMR to this address:
+	</p>
+	{{ partial "donate.html" . }}
+</div>
+{{ end }}

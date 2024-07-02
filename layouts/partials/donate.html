@@ -1,0 +1,2 @@
+<p class="address" markdown="1">{{ .Site.Params.author.monero_address }}</p>
+<p><a href="monero:{{ .Site.Params.author.monero_address }}">{{ $image := resources.Get .Site.Params.author.monero_qr }}<img src='{{ $image.RelPermalink }}' class="qr" style="max-width: 200px; margin-bottom: 50px" alt="Donate XMR" /></a></p>
