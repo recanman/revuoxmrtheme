@@ -1,7 +1,10 @@
 {{ with .Site.Params.right_icons }}
 	{{ range . }}
 		{{ $target := cond .external "_blank" "_self" }}
-		<a class="icon" href="{{ .link | safeURL }}"  target="{{ $target }}">
+		
+		<!-- safeURL only works when the link is stored in a variable -->
+		{{ $link := .link }}
+		<a class="icon" href="{{ $link | safeURL }}"  target="{{ $target }}">
 			<img src="/img/{{ .icon }}" alt="{{ .icon_alt }}" title="{{ .title }}" />
 		</a>
 	{{ end }}
