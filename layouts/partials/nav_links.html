@@ -1,5 +1,5 @@
 {{ with .Site.Params.nav_links }}
 	{{ range . }}
-		<a href="{{ .link }}" title="{{ .title }}">{{ .title }}</a>
+		<a href="{{ .link | safeURL }}" title="{{ .title }}">{{ .title }}</a>
 	{{ end }}
 {{ end }}
