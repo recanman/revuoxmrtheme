@@ -2,7 +2,7 @@
 
 The Revuo XMR theme is a customized theme for the Revuo Monero newsletter.
 
-[Emerald](https://github.com/rottenwheel/revuo-monero-theme/) is the theme used by Revuo. It is a minimal and mobile-first blog theme, originally for Jekyll, ported to Hugo by [recanman](https://github.com/recanman).
+[Emerald](https://github.com/KingFelix/emerald) is the theme used by Revuo. It is a minimal and mobile-first blog theme, originally made for Jekyll, ported to Hugo by [recanman](https://github.com/recanman).
 
 ## Setup & usage
 
