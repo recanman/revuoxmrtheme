@@ -1,5 +1,7 @@
 {{ with .Site.Params.nav_links }}
 	{{ range . }}
-		<a href="{{ .link | safeURL }}" title="{{ .title }}">{{ .title }}</a>
+		<!-- safeURL only works when the link is stored in a variable -->
+		{{ $link := .link }}
+		<a href="{{ $link | safeURL }}" title="{{ .title }}">{{ .title }}</a>
 	{{ end }}
 {{ end }}
