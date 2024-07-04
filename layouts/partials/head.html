@@ -7,10 +7,10 @@
 <meta name="description" content="{{ .Description }}" />
 <meta name="keywords" content="{{ .Keywords }}" />
 
-<link rel="icon" type="image/png" sizes="32x32" href="/revuo-icon_1.png" />
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon_1.png" />
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32_1.png" />
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16_1.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/img/revuo-icon_1.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon_1.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32_1.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16_1.png" />
 
 <meta name="application-name" content="{{ .Site.Title }}" />
 <meta name="msapplication-TileColor" content="#ffffff" />
@@ -22,6 +22,10 @@
 <meta name="twitter:title" content="{{ .Title }}" />
 <meta property="og:site_name" content="{{ .Site.Title }}" />
 <meta property="og:title" content="{{ .Title }}" />
+
+{{ with .OutputFormats.Get "rss" -}}
+  {{ printf `<link rel=%q type=%q href=%q title=%q>` .Rel .MediaType.Type .Permalink site.Title | safeHTML }}
+{{ end }}
 
 <script type="application/ld+json">
 	{
@@ -37,11 +41,11 @@
 		// "description" : "{{ if .Description }}{{ .Description }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ end }}{{ end }}",
 		"description" : "{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}"
 		"inLanguage" : "{{ .Lang }}",
-		"author" : "{{ range .Site.Author }}{{ . }}{{ end }}",
-		"creator" : "{{ range .Site.Author }}{{ . }}{{ end }}",
-		"publisher": "{{ range .Site.Author }}{{ . }}{{ end }}",
-		"accountablePerson" : "{{ range .Site.Author }}{{ . }}{{ end }}",
-		"copyrightHolder" : "{{ range .Site.Author }}{{ . }}{{ end }}",
+		"author" : "{{ .Site.Params.Author.name }}",
+		"creator" : "{{ .Site.Params.Author.name }}",
+		"publisher": "{{ .Site.Params.Author.name }}",
+		"accountablePerson" : "{{ .Site.Params.Author.name }}",
+		"copyrightHolder" : "{{ .Site.Params.Author.name }}",
 		"copyrightYear" : "{{ .Date.Format "2006" }}",
 		"datePublished": "{{ .Date | safeHTML }}",
 		"dateModified" : "{{ .Date | safeHTML }}",
