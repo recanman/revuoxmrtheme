@@ -7,7 +7,7 @@
 
 	{{ $goal := .Get "goal" }}
 	{{ $raised := .Get "raised" }}
-	{{ with .Get "raised" }}
+	{{ with $goal }}
 <p>Raised <b>{{ $raised }}</b> of <b>{{ $goal }}</b> XMR ({{ div (.) ($goal) | mul 100 | int }}%)</p>
 	{{ end }}
 </div>

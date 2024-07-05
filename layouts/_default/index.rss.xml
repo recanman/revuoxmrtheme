@@ -12,16 +12,18 @@
 		<atom:link href="{{ .Permalink }}" rel="self" type="application/rss+xml" />
 
 		{{ range where .Site.Pages "Type" "weekly" }}
-			<item>
-				<title>{{ .Title }}</title>
-				<link>{{ .Permalink }}</link>
-				<guid isPermaLink="true">{{ .Permalink }}</guid>
-				<pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" }}</pubDate>
+			{{ if ne .Title "Weeklies" }}
+				<item>
+					<title>{{ .Title }}</title>
+					<link>{{ .Permalink }}</link>
+					<guid isPermaLink="true">{{ .Permalink }}</guid>
+					<pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" }}</pubDate>
 
-				<content type="html">{{ .Content | truncate 350 | html }}</content>
-				<media:thumbnail url="{{ .Permalink }}cover.png" xmlns:media="http://search.yahoo.com/mrss/" />
-				<media:content medium="image" url="{{ .Permalink }}cover.png" xmlns:media="http://search.yahoo.com/mrss/" />
-			</item>
+					<content type="html">{{ .Content | truncate 350 | html }}</content>
+					<media:thumbnail url="{{ .Permalink }}cover.png" xmlns:media="http://search.yahoo.com/mrss/" />
+					<media:content medium="image" url="{{ .Permalink }}cover.png" xmlns:media="http://search.yahoo.com/mrss/" />
+				</item>
+			{{ end }}
 		{{ end }}
 	</channel>
 </rss>
