@@ -1,6 +1,6 @@
 <div class="proposal">
 	<p>
-		<a href='https://ccs.getmonero.org/proposals/{{ .Get "link" }}.html' target="_blank">
+		<a href='{{ .Get "link" }}' target="_blank">
 			{{ trim .Inner "<p></p>\n\r" }}
 		</a><span>by {{ .Get "author" }}.</span>
 	</p>
