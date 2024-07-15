@@ -20,8 +20,10 @@
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="{{ .Title }}" />
+<meta name="twitter:image" content="{{ if and (eq .Section "posts") (.Params.image) }}/{{ .Params.image }}{{ else }}/img/revuo-monero.png{{ end }}" />
 <meta property="og:site_name" content="{{ .Site.Title }}" />
 <meta property="og:title" content="{{ .Title }}" />
+<meta property="og:image" content="{{ if and (eq .Section "posts") (.Params.image) }}/{{ .Params.image }}{{ else }}/img/revuo-monero.png{{ end }}" />
 
 {{ with .OutputFormats.Get "rss" -}}
   {{ printf `<link rel=%q type=%q href=%q title=%q>` .Rel .MediaType.Type .Permalink site.Title | safeHTML }}
