@@ -82,7 +82,7 @@ Sources: [miningpoolstats.stream](https://miningpoolstats.stream/monero); [bitin
 
 {{< volunteer >}}
 {{% volunteer_item title="Test Monero Core Software" link="https://github.com/monero-project/monero" %}}
-Anyone with moderate technical ability is encouraged to try to build and run Monero nightlies. Do not trust it with your Monero, but feel free to open an Issue on GitHub as problems arise. Instructions to build on your OS of choice can be found here. 
+Anyone with moderate technical ability is encouraged to try to build and run Monero nightlies. Do not trust it with your Monero, but feel free to open an Issue on GitHub as problems arise. Instructions to build on your OS of choice can be found [here](https://github.com/monero-project/monero#compiling-monero-from-source). 
 {{% /volunteer_item %}}
 {{< /volunteer >}}
 
