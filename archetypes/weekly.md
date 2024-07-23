@@ -14,21 +14,21 @@ title: "Issue {{ len (readDir "content/weekly") }}: {{ dateFormat "January 02" .
 - [CCS Proposals](#proposals)
 - [Price & Blockchain Stats](#stats)
 - [Volunteer Opportunities](#volunteer)
-- [Donate](#donate)
+- [Support](#support)
 
-### Recent News
+### Recent News {#news}
 
 {{% newsbyte %}}
 Haveno DEX [v1.0.8](https://github.com/haveno-dex/haveno/releases/tag/1.0.8) adding scripts to run Haveno on Tails OS; miscellaneous translations; general enhancements and a few bug fixes. Haveno Reto [v1.0.8](https://github.com/retoaccess1/haveno-reto/releases/tag/v1.0.8).
 {{% /newsbyte %}}
 
-### Upcoming Events
+### Upcoming Events {#events}
 
 {{% event "July 1, 2024 (Monday) - 18:00 UTC" %}}
 Seraphis Wallet Workgroup Meeting - [#no-wallet-left-behind](irc://irc.libera.chat/#no-wallet-left-behind) IRC channel; Matrix [room](https://matrix.to/#/#no-wallet-left-behind:monero.social).
 {{% /event %}}
 
-### CCS Proposal Ideas
+### CCS Proposal Ideas {#proposals}
 
 Below you can find some CCS proposal ideas open for discussion.
 
@@ -42,7 +42,7 @@ full-time development 2024Q3
 full-time development 2024Q3
 {{% /ccs_item %}}
 
-### Price & Blockchain Stats
+### Price & Blockchain Stats {#stats}
 
 ###### Blockchain Stats
 
