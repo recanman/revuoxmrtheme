@@ -16,7 +16,7 @@
 	<tr>
 	  {{ $price := split (.Get "price_usd") "," }}
 	  <td data-th="XMR to">USD</td>
-	  <td data-th='{{ $td := .Get "table_date" }}'>${{ index $price 0 }}</td>
+	  <td data-th='{{ $td }}'>${{ index $price 0 }}</td>
 
 	  {{ $week := index $price 1 }}
 	  {{ $month := index $price 2 }}
@@ -36,7 +36,7 @@
 	<tr class="row3">
 	  {{ $price := split (.Get "price_eur") "," }}
 	  <td data-th="XMR to">EUR</td>
-	  <td data-th='{{ $td := .Get "table_date" }}'>€{{ index $price 0 }}</td>
+	  <td data-th='{{ $td }}'>€{{ index $price 0 }}</td>
 	  
 	  {{ $week := index $price 1 }}
 	  {{ $month := index $price 2 }}
@@ -56,7 +56,7 @@
 	<tr>
 	  {{ $price := split (.Get "price_btc") "," }}
 	  <td data-th="XMR to">BTC</td>
-	  <td data-th='{{ $td := .Get "table_date" }}'>₿{{ index $price 0 }}</td>
+	  <td data-th='{{ $td }}'>₿{{ index $price 0 }}</td>
 
 	  {{ $week := index $price 1 }}
 	  {{ $month := index $price 2 }}
