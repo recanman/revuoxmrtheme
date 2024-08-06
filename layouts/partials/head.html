@@ -20,11 +20,11 @@
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="{{ .Title }}" />
-<meta name="twitter:image" content="{{ if (eq .Section "weekly") }}{{ .Permalink }}/cover.png{{ else }}{{ .Site.BaseURL }}/img/revuo-monero.png{{ end }}" />
+<meta name="twitter:image" content="{{ if (eq .Section "weekly") }}{{ .Permalink }}/cover.png{{ else }}{{ .Site.BaseURL }}/img/revuo-monero.jpg{{ end }}" />
 <meta name="twitter:description" content="{{ .Site.Params.Description }}" />
 <meta property="og:site_name" content="{{ .Site.Title }}" />
 <meta property="og:title" content="{{ .Title }}" />
-<meta property="og:image" content="{{ if (eq .Section "weekly") }}{{ .Permalink }}/cover.png{{ else }}{{ .Site.BaseURL }}/img/revuo-monero.png{{ end }}" />
+<meta property="og:image" content="{{ if (eq .Section "weekly") }}{{ .Permalink }}/cover.png{{ else }}{{ .Site.BaseURL }}/img/revuo-monero.jpg{{ end }}" />
 <meta property="og:description" content="{{ .Site.Params.Description }}" />
 
 {{ with .OutputFormats.Get "rss" -}}
