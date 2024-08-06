@@ -4,7 +4,7 @@
 	content="width=device-width, initial-scale=1.0, maximum-scale=1"
 />
 <title>{{ .Title }}</title>
-<meta name="description" content="{{ .Description }}" />
+<meta name="description" content="{{ .Site.Params.Description }}" />
 <meta name="keywords" content="{{ .Keywords }}" />
 
 <link rel="icon" type="image/png" sizes="32x32" href="/img/revuo-icon_1.png" />
@@ -21,9 +21,11 @@
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="{{ .Title }}" />
 <meta name="twitter:image" content="{{ if (eq .Section "weekly") }}{{ .Permalink }}/cover.png{{ else }}{{ .Site.BaseURL }}/img/revuo-monero.png{{ end }}" />
+<meta name="twitter:description" content="{{ .Site.Params.Description }}" />
 <meta property="og:site_name" content="{{ .Site.Title }}" />
 <meta property="og:title" content="{{ .Title }}" />
 <meta property="og:image" content="{{ if (eq .Section "weekly") }}{{ .Permalink }}/cover.png{{ else }}{{ .Site.BaseURL }}/img/revuo-monero.png{{ end }}" />
+<meta property="og:description" content="{{ .Site.Params.Description }}" />
 
 {{ with .OutputFormats.Get "rss" -}}
   {{ printf `<link rel=%q type=%q href=%q title=%q>` .Rel .MediaType.Type .Permalink site.Title | safeHTML }}
