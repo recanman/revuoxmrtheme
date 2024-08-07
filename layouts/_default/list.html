@@ -10,7 +10,11 @@
 			<h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
 			<time class="by-line">{{ .Date.Format .Site.Params.dateFormat }}</time>
 			<a href="{{ .RelPermalink }}">
-				<img class="img-lead" src="{{ .RelPermalink }}cover.png" alt="Revuo Monero Weekly #{{ .Params.issuenumber }} cover">
+				{{ $image := .Resources.Get "cover.png" }}
+				{{ $image := $image.Resize "650x" }}
+				{{ with $image }}
+					<img class="img-lead" src="{{ $image.RelPermalink }}" alt="Revuo Monero Weekly #{{ .Params.issuenumber }} cover">
+				{{ end }}
 			</a>
 
 			{{ $sTitle := split .Params.title ":" }}
