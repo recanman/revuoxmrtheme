@@ -11,3 +11,12 @@
 <p>Raised <b>{{ $raised }}</b> of <b>{{ $goal }}</b> XMR ({{ div (mul $raised 1.0) (mul $goal 1.0) | mul 100 | int }}%)</p>
 	{{ end }}
 </div>
+
+<!-- Display a message at the end of the list, denoted by the "last" parameter --> 
+{{ with .Get "last" }}
+	{{ with $goal }}
+<p>Find more <a href="https://ccs.getmonero.org/funding-required/" target="_blank">here</a>.
+	{{ else }}
+<p>Find more <a href="https://ccs.getmonero.org/ideas/" target="_blank">here</a>. Posting comments in favor of, or against proposals is encouraged.</p>
+	{{ end }}
+{{ end }}
