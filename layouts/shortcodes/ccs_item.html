@@ -20,3 +20,7 @@
 <p>Find more <a href="https://ccs.getmonero.org/ideas/" target="_blank">here</a>. Posting comments in favor of, or against proposals is encouraged.</p>
 	{{ end }}
 {{ end }}
+
+{{ with .Get "more" }}
+<p>Find more proposals currently in need of funding <a target="_blank" href="https://ccs.getmonero.org/funding-required/">here</a>.</p>
+{{ end }}
