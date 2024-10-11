@@ -78,7 +78,7 @@ full-time development 2024Q3
 
 ![XMR Price Graph](./price.png)
 
-Sources: [miningpoolstats.stream](https://miningpoolstats.stream/monero); [bitinfocharts.com](https://bitinfocharts.com/monero/); [coingecko.com](https://www.coingecko.com/en/coins/monero); [localmonero.co blocks](https://localmonero.co/blocks); [monero.boats](https://monero.boats/).
+Sources: [miningpoolstats.stream](https://miningpoolstats.stream/monero); [bitinfocharts.com](https://bitinfocharts.com/monero/); [coingecko.com](https://www.coingecko.com/en/coins/monero); [localmonero.co blocks](https://localmonero.co/blocks); [haveno.markets](https://haveno.markets/).
 
 {{< volunteer >}}
 {{% volunteer_item title="Test Monero Core Software" link="https://github.com/monero-project/monero" %}}
