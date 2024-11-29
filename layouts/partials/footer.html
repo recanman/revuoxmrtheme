@@ -48,11 +48,4 @@
 			{{ end }}
 		{{ end }}
 	</p>
-
-	{{ with .Site.Params.sponsor }}
-		{{ .introduction }}
-		<a class="footer-sponsor" href="{{ .link }}" target="_blank">
-			<img src="/img/{{ .icon }}" alt="{{ .icon_alt }}" />
-		</a>
-	{{ end }}
 </footer>
